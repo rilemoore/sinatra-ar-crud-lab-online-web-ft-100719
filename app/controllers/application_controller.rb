@@ -17,8 +17,12 @@ class ApplicationController < Sinatra::Base
   
   post '/articles' do
     Article.create(params)
+<<<<<<< HEAD
     redirection = '/articles/' + Article.find(Article.all.last.id).id.to_s
     redirect redirection
+=======
+    redirect '/articles'
+>>>>>>> d55c1bdbc78a57132baf6ddbf9e2c63520b48d9a
   end
   
   get '/articles' do
@@ -37,6 +41,7 @@ class ApplicationController < Sinatra::Base
   end
   
   patch '/articles/:id' do
+<<<<<<< HEAD
     new_info = {}
     article = Article.find(params["id"])
     new_info[:title] = params["title"]
@@ -44,10 +49,14 @@ class ApplicationController < Sinatra::Base
     article.update(new_info)
     
     redirect "/articles/#{params["id"]}"
+=======
+    id = params["id"]
+>>>>>>> d55c1bdbc78a57132baf6ddbf9e2c63520b48d9a
     
   end
   
   
+<<<<<<< HEAD
   delete '/articles/:id/delete' do
     @article = Article.find(params["id"])
     @article.destroy
@@ -57,4 +66,6 @@ class ApplicationController < Sinatra::Base
   
   
   
+=======
+>>>>>>> d55c1bdbc78a57132baf6ddbf9e2c63520b48d9a
 end
